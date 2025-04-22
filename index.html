@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Tools Zone</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --card-color: #1e1e1e;
+    }
+
+    body.light {
+      --bg-color: #f2f2f2;
+      --text-color: #121212;
+      --card-color: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .welcome {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .toggle-theme {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .search-box input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .tool-card {
+      background-color: var(--card-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .tool-card:hover {
+      transform: scale(1.02);
+    }
+
+    .tool-title a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #4da6ff;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .tool-title a:hover {
+      text-decoration: underline;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px; width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #4da6ff;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Text Tools Zone</h1>
+    <div class="welcome">
+      Welcome to our powerful text tools zone!<br />
+      Discover writing & formatting tools from <strong>S M Ripon</strong> and the team at <strong>Accessible Resource</strong>.
+    </div>
+
+    <div class="toggle-theme">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+      <p>Toggle Light/Dark Mode</p>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search text tools..." />
+    </div>
+
+    <div id="toolsList">
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Text-analyser-pro/" target="_blank">
+            Text Analyser Pro
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Universal-Text-Encoder-Decoder/" target="_blank">
+            Universal Text Encoder & Decoder
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Quick-fixed-text/" target="_blank">
+            Quick Fixed Text
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Convert-text-to-pdf/" target="_blank">
+            Text to PDF Converter
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Pdf-to-text/" target="_blank">
+            PDF to Text Converter
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">
+          <a href="https://accessibleresource.github.io/Pdf-merger/" target="_blank">
+            PDF Merger
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("change", () => {
+      document.body.classList.toggle("light");
+    });
+
+    const searchInput = document.getElementById("searchInput");
+    const toolCards = document.querySelectorAll(".tool-card");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      toolCards.forEach((card) => {
+        const title = card.querySelector(".tool-title").textContent.toLowerCase();
+        card.style.display = title.includes(searchTerm) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
