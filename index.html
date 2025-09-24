@@ -5,24 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Text Tools Zone</title>
   <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #ffffff;
-      --card-color: #1e1e1e;
-    }
-
-    body.light {
-      --bg-color: #f2f2f2;
-      --text-color: #121212;
-      --card-color: #ffffff;
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: all 0.3s ease;
+      background-color: #121212;
+      color: #ffffff;
     }
 
     .container {
@@ -33,190 +20,91 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       font-size: 2.5rem;
     }
 
-    .welcome {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .toggle-theme {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .search-box {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .search-box input {
-      width: 80%;
-      padding: 10px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-    }
-
     .tool-card {
-      background-color: var(--card-color);
+      background-color: #1e1e1e;
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s;
-      text-align: center;
     }
 
     .tool-card:hover {
       transform: scale(1.02);
     }
 
-    .tool-title a {
+    .tool-card h2 {
       font-size: 1.5rem;
-      text-decoration: none;
       color: #4da6ff;
-      font-weight: bold;
-      display: inline-block;
+      margin-top: 0;
     }
 
-    .tool-title a:hover {
-      text-decoration: underline;
+    .tool-card p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 26px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0;
-      right: 0; bottom: 0;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 34px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 20px; width: 20px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: 0.4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
+    .tool-card a {
+      text-decoration: none;
+      color: #ffffff;
       background-color: #4da6ff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
 
-    input:checked + .slider:before {
-      transform: translateX(24px);
+    .tool-card a:hover {
+      background-color: #3a8cd8;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Text Tools Zone</h1>
-    <div class="welcome">
-      Welcome to our powerful text tools zone!<br />
-      Discover writing & formatting tools from <strong>S M Ripon</strong> and the team at <strong>Accessible Resource</strong>.
-    </div>
-
-    <div class="toggle-theme">
-      <label class="switch">
-        <input type="checkbox" id="themeToggle" />
-        <span class="slider"></span>
-      </label>
-      <p>Toggle Light/Dark Mode</p>
-    </div>
-
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search text tools..." />
-    </div>
 
     <div id="toolsList">
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Text-analyser-pro/" target="_blank">
-            Text Analyser Pro
-          </a>
-        </div>
+        <h2>Text Analyser Pro</h2>
+        <p>A comprehensive tool to analyze your text, providing detailed statistics like word count, character count, sentence count, reading time, and more. Perfect for writers, students, and professionals who need to understand their text's properties in depth.</p>
+        <a href="https://toolnovanext.github.io/Text-analyser-pro/" target="_blank">Open Text Analyser Pro</a>
       </div>
 
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Universal-Text-Encoder-Decoder/" target="_blank">
-            Universal Text Encoder & Decoder
-          </a>
-        </div>
+        <h2>Universal Text Encoder & Decoder</h2>
+        <p>Easily encode your text into various formats like Base64, URL encoding, and more, or decode it back to its original form. A handy utility for developers and data processors working with different text encodings.</p>
+        <a href="https://toolnovanext.github.io/Universal-Text-Encoder-Decoder/" target="_blank">Open Universal Text Encoder & Decoder</a>
       </div>
 
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Quick-fixed-text/" target="_blank">
-            Quick Fixed Text
-          </a>
-        </div>
+        <h2>Quick Fixed Text</h2>
+        <p>Instantly clean up and format your text. This tool helps you fix common issues like extra spaces, line breaks, and other formatting inconsistencies, making your text clean and ready for use.</p>
+        <a href="https://toolnovanext.github.io/Quick-fixed-text/" target="_blank">Open Quick Fixed Text</a>
       </div>
 
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Convert-text-to-pdf/" target="_blank">
-            Text to PDF Converter
-          </a>
-        </div>
+        <h2>Text to PDF Converter</h2>
+        <p>A simple and efficient way to convert your plain text into a professional-looking PDF document. Customize formatting and easily save or share your documents in a universally accessible format.</p>
+        <a href="https://toolnovanext.github.io/Convert-text-to-pdf/" target="_blank">Open Text to PDF Converter</a>
       </div>
 
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Pdf-to-text/" target="_blank">
-            PDF to Text Converter
-          </a>
-        </div>
+        <h2>PDF to Text Converter</h2>
+        <p>Extract plain text from your PDF files with ease. This tool allows you to convert the content of a PDF into editable text, which you can then copy, edit, or use for other purposes.</p>
+        <a href="https://toolnovanext.github.io/Pdf-to-text/" target="_blank">Open PDF to Text Converter</a>
       </div>
 
       <div class="tool-card">
-        <div class="tool-title">
-          <a href="https://accessibleresource.github.io/Pdf-merger/" target="_blank">
-            PDF Merger
-          </a>
-        </div>
+        <h2>PDF Merger</h2>
+        <p>Combine multiple PDF files into a single, organized document. Simply upload your PDFs, arrange them in the desired order, and merge them into one file for easy management and sharing.</p>
+        <a href="https://toolnovanext.github.io/Pdf-merger/" target="_blank">Open PDF Merger</a>
       </div>
     </div>
   </div>
-
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-    themeToggle.addEventListener("change", () => {
-      document.body.classList.toggle("light");
-    });
-
-    const searchInput = document.getElementById("searchInput");
-    const toolCards = document.querySelectorAll(".tool-card");
-
-    searchInput.addEventListener("input", () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      toolCards.forEach((card) => {
-        const title = card.querySelector(".tool-title").textContent.toLowerCase();
-        card.style.display = title.includes(searchTerm) ? "block" : "none";
-      });
-    });
-  </script>
 </body>
 </html>
